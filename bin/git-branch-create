@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#
+# git-branch-create
+#
+#   Creates a new branch both locally and remotely, from the HEAD of
+#   the current working branch, and checks out the new branch locally
+#
+###############################################################################
+# Usage
+###############################################################################
+USAGE=$(cat <<'EOT'
+Usage:
+  git branch-create <new-branch-name>
+  Creates a new branch both locally and remotely (in the origin), using
+  the HEAD of the current working branch as the starting point, and locally
+  checks out the the new branch.
+  PARAMETERS:
+    new-branch-name:
+      The name to give the new branch.
+EOT
+)
+###############################################################################
+# Main Program
+###############################################################################
+branch_name="${1}"
+if [ "${branch_name}" == "" ]; then
+  echo "${USAGE}"
+  exit -1
+fi
+git checkout -b ${branch_name}
+git push origin ${branch_name}
+git config branch.${branch_name}.remote origin
+git config branch.${branch_name}.merge refs/heads/${branch_name}
