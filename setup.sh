@@ -14,6 +14,12 @@ for file in $FILES; do
     ln -s ${DOTFILES_DIR}/${name} ~/${name}
 done
 
+echo "Installing fonts."
+FONT_DIR="$HOME/.fonts"
+git clone https://github.com/powerline/fonts.git $FONT_DIR --depth=1
+cd $FONT_DIR
+./install.sh
+
 # Link zsh custom files
 rm -rf ~/.oh-my-zsh/custom/aliases.zsh
 ln -s ${DOTFILES_DIR}/.zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
@@ -21,5 +27,7 @@ ln -s ${DOTFILES_DIR}/.zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 rm -rf ~/.oh-my-zsh/custom/environment.zsh
 ln -s ${DOTFILES_DIR}/.zsh/environment.zsh ~/.oh-my-zsh/custom/environment.zsh
 
-# Copy the spaceship theme into the oh-my-zsh themes directory
-cp spaceship.zsh-theme $HOME/.oh-my-zsh/themes/.
+echo "Setting up the Spaceship theme."
+ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
