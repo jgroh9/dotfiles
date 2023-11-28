@@ -34,3 +34,6 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 
 echo "Applying changes to .zshrc"
 omz reload
+
+echo "Reload the .zshrc file"
+exec zsh
