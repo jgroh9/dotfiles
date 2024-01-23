@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 DOTFILES_DIR=$(dirname "$(readlink -f "$0")")
 
 # Link the directories you want (including those that start with dot)
@@ -34,3 +36,6 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 
 echo "Reload the .zshrc file"
 exec zsh
+
+echo "Dotfiles setup complete!"
+exit 0
