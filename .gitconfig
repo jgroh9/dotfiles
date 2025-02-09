@@ -1,13 +1,15 @@
-[color]
-	ui = auto
-[github]
-	user = jgroh9
-	password = !security 2>&1 >/dev/null find-generic-password -gs github.password | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
 [alias]
 	ci = commit -a
 	stat = status -s
 	co = checkout
 	unadd = reset HEAD
+[color]
+	ui = auto
+[github]
+	user = jgroh9
+	password = !security 2>&1 >/dev/null find-generic-password -gs github.password | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
 [push]
 	default = tracking
-
+[user]
+	name = Jeremy Groh
+	email = jeremygroh9@gmail.com
