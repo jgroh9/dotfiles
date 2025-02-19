@@ -35,7 +35,7 @@ git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 echo "Reloading zsh configuration..."
-source ~/.zshrc
+zsh -c 'source ~/.zshrc'
 
 echo "Dotfiles setup complete!"
 exit 0
