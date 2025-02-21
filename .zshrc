@@ -10,3 +10,5 @@ source $ZSH/oh-my-zsh.sh
 
 DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
+
+export GPG_TTY=$(tty)
