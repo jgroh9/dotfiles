@@ -5,6 +5,8 @@
 	unadd = reset HEAD
 [color]
 	ui = auto
+[commit]
+	gpgsign = true
 [core]
         editor = nano
 [github]
@@ -16,6 +18,9 @@
         rebase = false
 [push]
 	default = tracking
+[tag]
+	gpgsign = true
 [user]
 	name = Jeremy Groh
 	email = 1718185+jgroh9@users.noreply.github.com
+	signingkey = 3C86AAFE408D5F65
